@@ -50,46 +50,50 @@ def handle_events(liars, buttons, sounds):
                 if liars.p1_pew.status == False:
                     buttons[0].change_not_hover_color(COMMUNIST_RED)
                     buttons[0].change_hover_color(REPUBLICAN_RED)
-                    sounds[1].play()
-                    sounds[4].play()
+                    sounds[2][0].play()
+                    sounds[2][rnd(1,len(sounds[2]) - 1)].play()
                 else:
-                    sounds[0].play()
+                    sounds[0][0].play()
+                    sounds[0][rnd(1,len(sounds[0]) - 1)].play()
             if buttons[1].check_clicked():
                 liars.p2_pew.pull_trigger()
 
                 if liars.p2_pew.status == False:
                     buttons[1].change_not_hover_color(COMMUNIST_RED)
                     buttons[1].change_hover_color(REPUBLICAN_RED)
-                    sounds[1].play()
-                    sounds[5].play()
+                    sounds[2][0].play()
+                    sounds[2][rnd(1,len(sounds[2]) - 1)].play()
                 else:
-                    sounds[0].play()
+                    sounds[0][0].play()
+                    sounds[0][rnd(1,len(sounds[0]) - 1)].play()
             if buttons[2].check_clicked():
                 liars.p3_pew.pull_trigger()
 
                 if liars.p3_pew.status == False:
                     buttons[2].change_not_hover_color(COMMUNIST_RED)
                     buttons[2].change_hover_color(REPUBLICAN_RED)
-                    sounds[1].play()
-                    sounds[3].play()
+                    sounds[2][0].play()
+                    sounds[2][rnd(1,len(sounds[2]) - 1)].play()
                 else:
-                    sounds[0].play()
+                    sounds[0][0].play()
+                    sounds[0][rnd(1,len(sounds[0]) - 1)].play()
             if buttons[3].check_clicked():
                 liars.p4_pew.pull_trigger()
 
                 if liars.p4_pew.status == False:
                     buttons[3].change_not_hover_color(COMMUNIST_RED)
                     buttons[3].change_hover_color(REPUBLICAN_RED)
-                    sounds[1].play()
-                    sounds[3].play()
+                    sounds[2][0].play()
+                    sounds[2][rnd(1,len(sounds[2]) - 1)].play()
                 else:
-                    sounds[0].play()
+                    sounds[0][0].play()
+                    sounds[0][rnd(1,len(sounds[0]) - 1)].play()
 
             if buttons[4].check_clicked():
 
                 for pew in liars.pews:
                     pew.reset()
-                    sounds[2].play()
+                    sounds[1][rnd(0,len(sounds[1]) - 1)].play()
 
                 for button in buttons:
                     button.change_not_hover_color(THAYER_GREEN)
@@ -117,7 +121,7 @@ def main(): # MAIN FUNCTION
     p1 = "Thayer"
     p2 = "Lucas"
     p3 = "Apollos"
-    p4 = "Elliot"
+    p4 = "Josh"
 
     liars = liar_bar.Bar(4,p1, p2, p3 ,p4)
 
@@ -131,13 +135,25 @@ def main(): # MAIN FUNCTION
     buttons = [p1_button, p2_button,p3_button,p4_button,reset]
 
     pew_safe = pygame.mixer.Sound("sounds/click.mp3")
+    spy_yes = pygame.mixer.Sound("sounds/spy_yes.mp3")
     pew_bang = pygame.mixer.Sound("sounds/vine-boom.mp3")
+    demo_glue = pygame.mixer.Sound("sounds/demo_glue.mp3")
+    demo_idiot = pygame.mixer.Sound("sounds/demo_idiot.mp3")
+    engi_ugly = pygame.mixer.Sound("sounds/engi_ugly.mp3")
+    nope  = pygame.mixer.Sound("sounds/nope.mp3")
     lockednloaded = pygame.mixer.Sound("sounds/Legacy_locknload.ogg")
     enemydown = pygame.mixer.Sound("sounds/Legacy_enemydown.ogg")
+    dead_ringer = pygame.mixer.Sound("sounds/dead_ringer.mp3")
+    kermit = pygame.mixer.Sound("sounds/jackfilms_kermit.mp3")
+    letmedie = pygame.mixer.Sound("sounds/asdf1.mp3")
     spy1 = pygame.mixer.Sound("sounds/spy1.mp3")
     spy2 = pygame.mixer.Sound("sounds/spy2.mp3")
     
-    sounds = [pew_safe, pew_bang, lockednloaded,enemydown,spy1,spy2]
+    safe_sounds = [pew_safe,spy_yes,letmedie,kermit]
+    revives = [lockednloaded, dead_ringer]
+    deaths = [pew_bang,enemydown,spy1,spy2,demo_glue,demo_idiot,engi_ugly,nope]
+
+    sounds = [safe_sounds, revives, deaths]
 
     # ADD ALL OBJECTS/CLASSES ABOVE HERE
     run = True
