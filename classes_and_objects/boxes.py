@@ -153,7 +153,7 @@ class Button(Text_box):
         if self.rect.collidepoint(mouse_pos):
             self.change_rect_color(self.hover_color)
         else:
-            self.change_rect_color(self.rect_color)
+            self.change_rect_color(self.not_hover_color)
 
     def check_clicked(self):
         mouse_pos = pygame.mouse.get_pos()

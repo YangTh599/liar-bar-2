@@ -51,6 +51,7 @@ def handle_events(liars, buttons, sounds):
                     buttons[0].change_not_hover_color(COMMUNIST_RED)
                     buttons[0].change_hover_color(REPUBLICAN_RED)
                     sounds[1].play()
+                    sounds[4].play()
                 else:
                     sounds[0].play()
             if buttons[1].check_clicked():
@@ -60,6 +61,7 @@ def handle_events(liars, buttons, sounds):
                     buttons[1].change_not_hover_color(COMMUNIST_RED)
                     buttons[1].change_hover_color(REPUBLICAN_RED)
                     sounds[1].play()
+                    sounds[5].play()
                 else:
                     sounds[0].play()
             if buttons[2].check_clicked():
@@ -69,6 +71,7 @@ def handle_events(liars, buttons, sounds):
                     buttons[2].change_not_hover_color(COMMUNIST_RED)
                     buttons[2].change_hover_color(REPUBLICAN_RED)
                     sounds[1].play()
+                    sounds[3].play()
                 else:
                     sounds[0].play()
             if buttons[3].check_clicked():
@@ -78,6 +81,7 @@ def handle_events(liars, buttons, sounds):
                     buttons[3].change_not_hover_color(COMMUNIST_RED)
                     buttons[3].change_hover_color(REPUBLICAN_RED)
                     sounds[1].play()
+                    sounds[3].play()
                 else:
                     sounds[0].play()
 
@@ -85,6 +89,7 @@ def handle_events(liars, buttons, sounds):
 
                 for pew in liars.pews:
                     pew.reset()
+                    sounds[2].play()
 
                 for button in buttons:
                     button.change_not_hover_color(THAYER_GREEN)
@@ -127,8 +132,12 @@ def main(): # MAIN FUNCTION
 
     pew_safe = pygame.mixer.Sound("sounds/click.mp3")
     pew_bang = pygame.mixer.Sound("sounds/vine-boom.mp3")
+    lockednloaded = pygame.mixer.Sound("sounds/Legacy_locknload.ogg")
+    enemydown = pygame.mixer.Sound("sounds/Legacy_enemydown.ogg")
+    spy1 = pygame.mixer.Sound("sounds/spy1.mp3")
+    spy2 = pygame.mixer.Sound("sounds/spy2.mp3")
     
-    sounds = [pew_safe, pew_bang]
+    sounds = [pew_safe, pew_bang, lockednloaded,enemydown,spy1,spy2]
 
     # ADD ALL OBJECTS/CLASSES ABOVE HERE
     run = True
