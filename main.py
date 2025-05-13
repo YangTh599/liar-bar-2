@@ -112,7 +112,7 @@ def main(): # MAIN FUNCTION
     p1 = "Thayer"
     p2 = "Lucas"
     p3 = "Apollos"
-    p4 = "Isaac"
+    p4 = "Elliot"
 
     liars = liar_bar.Bar(4,p1, p2, p3 ,p4)
 
