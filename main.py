@@ -149,7 +149,7 @@ def main(): # MAIN FUNCTION
     spy1 = pygame.mixer.Sound("sounds/spy1.mp3")
     spy2 = pygame.mixer.Sound("sounds/spy2.mp3")
     
-    safe_sounds = [pew_safe,spy_yes,letmedie,kermit]
+    safe_sounds = [pew_safe,spy_yes,kermit]
     revives = [lockednloaded, dead_ringer]
     deaths = [pew_bang,enemydown,spy1,spy2,demo_glue,demo_idiot,engi_ugly,nope]
 
